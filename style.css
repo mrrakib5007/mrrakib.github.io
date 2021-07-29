@@ -76,9 +76,36 @@ a {
 .banner_content h1{
     font-size: 75px;
     font-weight: 600;
-    color: #45d1a5;
-    text-shadow: 1px 1px #333;
+    color: #fff;
+    /* text-shadow: 1px 1px #333; */
+    position: relative;
+    -webkit-text-stroke: 0.1vw #f3f3f3;
+    text-transform: uppercase;
 }
+.banner_content h1::before {
+    content: attr( data-text );
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #45d1a5;
+    -webkit-text-stroke: 0vw #f3f3f3;
+    border-right: 2px solid #45d1a5;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+@keyframes animate {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%, 90% {
+        width: 40%;
+    }
+}
+
+
+
 .banner_content h5{
     font-weight: 600;
     color: #34495e;
@@ -620,6 +647,14 @@ a {
     .footer_content {
         margin-bottom: 40px;
     }
+    @keyframes animate {
+        0%, 10%, 100% {
+            width: 0;
+        }
+        70%, 90% {
+            width: 35%;
+        }
+    }
 
 }
 
@@ -722,6 +757,17 @@ a {
     /* footer bottom */
     .footer_bottom {
         padding: 20px;
+    }
+    @keyframes animate {
+        0%, 10%, 100% {
+            width: 0;
+        }
+        70%, 90% {
+            width: 70%;
+            }
+       }
+
+
     }
 
 
